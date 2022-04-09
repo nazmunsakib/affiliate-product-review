@@ -1,0 +1,19 @@
+.apr-container {
+    width: 80%;
+    margin: 0 auto;
+}
+.apr-product-item {
+    box-shadow: 0 0 20px #ddd;
+    margin-top: 30px;
+}
+.apr-product-info {
+    padding: 30px;
+}
+.apr-product-info ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.apr-product-top {
+    padding: 30px;
+}
