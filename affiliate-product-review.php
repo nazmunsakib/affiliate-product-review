@@ -35,10 +35,9 @@ final class Affiliate_Product_Review {
 		register_activation_hook( __FILE__, [ $this, 'apr_active' ] );
 
 		add_action( 'wp_enqueue_scripts', [ $this, 'apr_assets' ] );
-
 		add_action( 'init', [ $this, 'load_plugin_text_domain' ] );
 
-		$this->apr_file_include();
+		add_action( 'plugins_loaded', [ $this, 'apr_file_include' ] );
 
 	}
 
@@ -100,7 +99,7 @@ final class Affiliate_Product_Review {
 			update_option( 'apr_isntalled', time() );
 		}
 
-		update_option( 'apr_version', ACADEMY_VERSION );
+		update_option( 'apr_version', APR_VERSION );
 	}
 
 	/**
