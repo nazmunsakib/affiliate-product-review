@@ -79,7 +79,7 @@
 }
 
 .apr-product-image {
-    height: 400px;
+    height: 500px;
     background-size: cover;
     background-position: center;
     position: relative;
@@ -166,15 +166,13 @@
     }
 
     .apr-product-image {
-        height: 250px;
+        height: 300px;
     }
 
     .apr-pros {
         margin-right: 0;
         width: 100%;
-    }
-
-    .apr-pros, .apr-cons {
+        margin-top: 15px;
     }
 
     .apr-cons {
