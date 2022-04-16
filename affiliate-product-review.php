@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Affiliate Product Review
- * Description: This Plugin for product review
+ * Description: Affiliate Product Review is a powerful plugin you can add Easily turn Product Review , pros and cons, affiliate links into blog posts!
  * Plugin URI: https://nazmunsakib.com
  * Author: Nazmun sakib
  * Author URI:  https://nazmunsakib.com
@@ -9,6 +9,7 @@
  * License: GPL2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: apr
+ * Domain Path: /languages/
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -35,8 +36,21 @@ final class Affiliate_Product_Review {
 
 		add_action( 'wp_enqueue_scripts', [ $this, 'apr_assets' ] );
 
+		add_action( 'init', [ $this, 'load_plugin_text_domain' ] );
+
 		$this->apr_file_include();
 
+	}
+
+	/**
+	 * Load Textdomain
+	 *
+	 * Load plugin localization files.
+	 *
+	 * @access public
+	 */
+	public function load_plugin_text_domain() {
+		load_plugin_textdomain( 'apr', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' );
 	}
 
 	/**
