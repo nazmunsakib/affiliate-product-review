@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Affiliate Product Review
- * Description: This Plugin for product review 
+ * Description: This Plugin for product review
  * Plugin URI: https://nazmunsakib.com
  * Author: Nazmun sakib
  * Author URI:  https://nazmunsakib.com
@@ -11,54 +11,54 @@
  * Text Domain: apr
  */
 
- if( ! defined('ABSPATH') ){
-     exit;
- }
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
- /**
-  * This is mane class for the plugin
-  */
-  final class Affiliate_Product_Review{
+/**
+ * This is mane class for the plugin
+ */
+final class Affiliate_Product_Review {
 
-    /**
-     * Plugin version
-     * 
-     * @var string
-     */
-    const version = '1.0';
+	/**
+	 * Plugin version
+	 *
+	 * @var string
+	 */
+	const version = '1.0';
 
-    private function __construct(){
+	private function __construct() {
 
-        $this->define_constants();
+		$this->define_constants();
 
-        register_activation_hook( __FILE__, [ $this, 'apr_active' ] );
+		register_activation_hook( __FILE__, [ $this, 'apr_active' ] );
 
-        add_action('wp_enqueue_scripts', [$this, 'apr_assets'] );
+		add_action( 'wp_enqueue_scripts', [ $this, 'apr_assets' ] );
 
-         $this->apr_file_include();
+		$this->apr_file_include();
 
-    }
+	}
 
-    /**
-     * Inisialize Plugin instence
-     * 
-     * @access public
+	/**
+	 * Inisialize Plugin instence
+	 *
+	 * @access public
 	 * @static
-     * 
-     * @return \Affiliate_Product_Review
-     */
-    public static function init(){
+	 *
+	 * @return \Affiliate_Product_Review
+	 */
+	public static function init() {
 
-        $instence = false;
+		$instence = false;
 
-        if ( ! $instence ){
-            $instence = new self();
-        }
+		if ( ! $instence ) {
+			$instence = new self();
+		}
 
-        return $instence;
-    }
+		return $instence;
+	}
 
-    /**
+	/**
 	 * defin plugin constence
 	 *
 	 * @void
@@ -73,7 +73,7 @@
 
 	}
 
-    /**
+	/**
 	 * Do stuff upon plugin activation
 	 *
 	 * @return void
@@ -89,38 +89,39 @@
 		update_option( 'apr_version', ACADEMY_VERSION );
 	}
 
-    /**
+	/**
 	 * Include Files
 	 *
 	 * Load core files required to run the plugin.
 	 *
 	 * @access public
 	 */
-    public function apr_file_include(){
+	public function apr_file_include() {
 
-        require_once APR_PATH . '/lib/csf/csf.php';
-        require_once APR_PATH . '/include/Frontend/Metaboxes.php';
-        
-    }
+		require_once APR_PATH . '/lib/csf/csf.php';
+		require_once APR_PATH . '/include/Admin/Metaboxes.php';
+		require_once APR_PATH . '/include/Frontend/Review.php';
 
-    /**
-     * Load plugin js and css file
-     */
-    public function apr_assets(){
+	}
 
-        wp_enqueue_style('apr-main-style', APR_ASSETS . '/css/main-style.css', [], '1.0' );
+	/**
+	 * Load plugin js and css file
+	 */
+	public function apr_assets() {
 
-    }
+		wp_enqueue_style( 'apr-main-style', APR_ASSETS . '/css/main-style.css', [], '1.0' );
 
-  }
+	}
 
-  /**
-   * Isnisial The main class
-   * 
-   * @return false/Affiliate_Product_Review
-   */
-   function affiliate_product_riview(){
-       return Affiliate_Product_Review::init();
-   }
+}
 
-   affiliate_product_riview();
+/**
+ * Isnisial The main class
+ *
+ * @return false|Affiliate_Product_Review
+ */
+function affiliate_product_riview() {
+	return Affiliate_Product_Review::init();
+}
+
+affiliate_product_riview();
