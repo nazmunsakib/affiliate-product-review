@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name: Affiliate Product Review
+ * Plugin URI: https://github.com/nazmunsakib/affiliate-product-review/
  * Description: Affiliate Product Review is a powerful plugin you can add Easily turn Product Review , pros and cons, affiliate links into blog posts!
- * Plugin URI: https://nazmunsakib.com
  * Author: Nazmun sakib
  * Author URI:  https://nazmunsakib.com
  * Version: 1.0
