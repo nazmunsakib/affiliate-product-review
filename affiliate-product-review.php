@@ -5,7 +5,7 @@
  * Description: Affiliate Product Review is a powerful plugin you can add Easily turn Product Review , pros and cons, affiliate links into blog posts!
  * Author: Nazmun sakib
  * Author URI:  https://nazmunsakib.com
- * Version: 1.0
+ * Version: 1.0.0
  * License: GPL2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: apr
