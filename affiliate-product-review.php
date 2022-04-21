@@ -111,7 +111,7 @@ final class Affiliate_Product_Review {
 	 */
 	public function apr_file_include() {
 
-		require_once APR_PATH . '/lib/csf/csf.php';
+		require_once APR_PATH . '/libs/codestar-framework/codestar-framework.php';
 		require_once APR_PATH . '/include/Admin/Metaboxes.php';
 		require_once APR_PATH . '/include/Frontend/Review.php';
 

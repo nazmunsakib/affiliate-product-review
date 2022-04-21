@@ -148,7 +148,7 @@ if ( ! class_exists( 'CSF_Comment_Metabox' ) ) {
                 $tab_icon  = ( ! empty( $section['icon'] ) ) ? '<i class="csf-tab-icon '. esc_attr( $section['icon'] ) .'"></i>' : '';
                 $tab_error = ( ! empty( $errors['sections'][$tab_key] ) ) ? '<i class="csf-label-error csf-error">!</i>' : '';
 
-                echo '<li><a href="#">'. $tab_icon . $section['title'] . $tab_error .'</a></li>';
+                echo '<li><a href="#">'. $tab_icon . esc_html( $section['title'] ) . $tab_error .'</a></li>';
 
                 $tab_key++;
 
@@ -175,8 +175,8 @@ if ( ! class_exists( 'CSF_Comment_Metabox' ) ) {
 
               echo '<div class="csf-section hidden'. esc_attr( $section_onload . $section_class ) .'">';
 
-              echo ( $section_title || $section_icon ) ? '<div class="csf-section-title"><h3>'. $section_icon . $section_title .'</h3></div>' : '';
-              echo ( ! empty( $section['description'] ) ) ? '<div class="csf-field csf-section-description">'. $section['description'] .'</div>' : '';
+              echo ( $section_title || $section_icon ) ? '<div class="csf-section-title"><h3>'. $section_icon . esc_html( $section_title ) .'</h3></div>' : '';
+              echo ( ! empty( $section['description'] ) ) ? '<div class="csf-field csf-section-description">'. esc_html( $section['description'] ) .'</div>' : '';
 
               if ( ! empty( $section['fields'] ) ) {
 
